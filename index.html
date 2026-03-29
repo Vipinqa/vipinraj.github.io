@@ -23,7 +23,6 @@ body {
     font-family: 'Segoe UI', sans-serif;
     background: var(--bg);
     color: var(--text);
-    scroll-behavior: smooth;
 }
 
 /* NAVBAR */
@@ -61,6 +60,12 @@ header {
     color: white;
     text-decoration: none;
     border-radius: 6px;
+    margin: 5px;
+    display: inline-block;
+}
+
+.button:hover {
+    background: #007bff;
 }
 
 /* CONTAINER */
@@ -72,6 +77,7 @@ header {
 
 .section { margin-bottom: 50px; }
 
+/* CARD */
 .card {
     background: var(--card);
     padding: 20px;
@@ -79,10 +85,20 @@ header {
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     margin-bottom: 20px;
     transition: 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease forwards;
 }
 
 .card:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* SKILLS */
@@ -99,16 +115,11 @@ header {
     border-radius: 10px;
 }
 
-/* SCREENSHOTS */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-}
-
-.gallery img {
+/* IMAGE */
+.project-img {
     width: 100%;
     border-radius: 10px;
+    margin-top: 10px;
 }
 
 /* FOOTER */
@@ -151,27 +162,30 @@ function toggleDark() {
 
 <div class="container">
 
+<!-- ABOUT -->
 <section id="about" class="section">
 <h2>👋 About Me</h2>
 <div class="card">
 QA Engineer with 3.6 years of experience in manual and automation testing.
 Expert in Selenium, PyTest, Playwright, API testing, and CI/CD pipelines.
-Focused on delivering scalable, high-quality applications with minimal defects.
+Focused on delivering high-quality applications with minimal defects.
 </div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills" class="section">
 <h2>🧪 Skills</h2>
 <div class="skills">
-<div class="skill-box">Selenium</div>
-<div class="skill-box">PyTest</div>
-<div class="skill-box">Playwright</div>
-<div class="skill-box">API Testing</div>
-<div class="skill-box">JIRA</div>
-<div class="skill-box">CI/CD</div>
+<div class="skill-box">🧪 Selenium</div>
+<div class="skill-box">⚡ PyTest</div>
+<div class="skill-box">🎭 Playwright</div>
+<div class="skill-box">🔗 API Testing</div>
+<div class="skill-box">🐞 JIRA</div>
+<div class="skill-box">⚙️ CI/CD</div>
 </div>
 </section>
 
+<!-- SERVICES -->
 <section id="services" class="section">
 <h2>💼 Services</h2>
 <div class="card">
@@ -183,9 +197,19 @@ Focused on delivering scalable, high-quality applications with minimal defects.
 </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects" class="section">
 <h2>📸 Bug Reports & Testing Samples</h2>
 
+<!-- SUMMARY -->
+<div class="skills">
+<div class="skill-box"><h3>🧪 Test Cases</h3><p>25+</p></div>
+<div class="skill-box"><h3>🐞 Bugs Found</h3><p>10+</p></div>
+<div class="skill-box"><h3>🌐 Projects</h3><p>3</p></div>
+<div class="skill-box"><h3>⚙️ Tools</h3><p>JIRA, Selenium</p></div>
+</div>
+
+<!-- PROJECT 1 -->
 <div class="card">
 
 <h3>🛒 SauceDemo Login Testing</h3>
@@ -194,52 +218,65 @@ Focused on delivering scalable, high-quality applications with minimal defects.
 <p><strong>Bug:</strong> Login button not clickable</p>
 <p><strong>Environment:</strong> Chrome 121 | Windows 11</p>
 <p><strong>Severity:</strong> High</p>
-<p><strong>Status:</strong> Open</p>
 
-<img src="https://raw.githubusercontent.com/Vipinqa/vipinraj.github.io/main/Login_Button_Issue.png" 
-alt="Login Bug Screenshot" 
-style="width:100%; border-radius:10px; margin-top:10px;">
+<img src="https://raw.githubusercontent.com/Vipinqa/vipinraj.github.io/main/Login_Button_Issue.png" class="project-img">
 
 <br><br>
 
-<a class="button" 
-href="https://raw.githubusercontent.com/Vipinqa/vipinraj.github.io/main/Sample_Bug_Report_Web_Application.docx" 
-target="_blank">
-📄 View Bug Report
+<a class="button" href="https://raw.githubusercontent.com/Vipinqa/vipinraj.github.io/main/Sample_Bug_Report_Web_Application.docx" target="_blank">
+📄 Bug Report
 </a>
 
-<a class="button" 
-href="https://raw.githubusercontent.com/Vipinqa/vipinraj.github.io/main/Login_Test_Cases_Web_Application.xlsx" 
-target="_blank">
-📊 View Test Cases
+<a class="button" href="https://raw.githubusercontent.com/Vipinqa/vipinraj.github.io/main/Login_Test_Cases_Web_Application.xlsx" target="_blank">
+📊 Test Cases
 </a>
+
+<br><br>
+
+<p><strong>Testing Approach:</strong></p>
+<ul>
+<li>Performed functional testing on login module</li>
+<li>Validated UI behavior across browsers</li>
+<li>Identified critical usability issue</li>
+<li>Reported bug with detailed evidence</li>
+</ul>
 
 </div>
+
 </section>
-    
+
+<!-- WHY CHOOSE ME -->
+<section class="section">
+<h2>⭐ Why Choose Me</h2>
+<div class="card">
+✔ 3.6+ years QA experience <br><br>
+✔ Strong bug detection skills <br><br>
+✔ Clear and detailed reporting <br><br>
+✔ Fast delivery & communication
+</div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+<div class="card" style="text-align:center;">
+<h2>🚀 Need Website Testing?</h2>
+<p>I can help you find bugs and improve your product quality.</p>
+<br>
+<a class="button" href="mailto:vipinraj.freelance@gmail.com">
+📩 Hire Me Now
+</a>
+</div>
+</section>
+
+<!-- CONTACT -->
 <section id="contact" class="section">
 <h2>📞 Contact</h2>
-
 <div class="card">
+<p><strong>Email:</strong><br>
+<a href="mailto:vipinraj.freelance@gmail.com">vipinraj.freelance@gmail.com</a></p>
 
-<p><strong>📧 Email:</strong><br>
-<a href="mailto:vipinraj.freelance@gmail.com">
-vipinraj.freelance@gmail.com
-</a>
-</p>
-
-<p><strong>🔗 LinkedIn:</strong><br>
-<a href="https://www.linkedin.com/in/vipinraj/" target="_blank">
-View Profile
-</a>
-</p>
-
-<br>
-
-<a class="button" href="mailto:vipinraj.freelance@gmail.com">
-🚀 Hire Me Now
-</a>
-
+<p><strong>LinkedIn:</strong><br>
+<a href="https://www.linkedin.com/in/vipinraj/" target="_blank">View Profile</a></p>
 </div>
 </section>
 
